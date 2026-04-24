@@ -23,7 +23,7 @@ jobs:
 
     - uses: gradle/actions/setup-gradle@v3
 
-    - run: gradle assembleRelease
+    - run: gradle assembleNormalRelease
 
     - name: Rename APK
       run: mv app/build/outputs/apk/release/*.apk app/build/outputs/apk/release/getmed-release.apk
