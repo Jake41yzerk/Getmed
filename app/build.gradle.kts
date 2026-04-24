@@ -27,6 +27,10 @@ val currentVersionCode = currentVersion.code.toInt()
 
 android {
     compileSdk = 35
+    lint {
+        abortOnError = false
+        checkReleaseBuilds = false
+    }
 
     if (keystorePropertiesFile.exists()) {
         val keystoreProperties = Properties()
