@@ -23,15 +23,15 @@ jobs:
 
     - uses: gradle/actions/setup-gradle@v3
 
-    - run: ./gradlew assembleGenericRelease
+    - run: ./gradlew assembleGenericDebug
 
     - name: Rename APK
-      run: mv app/build/outputs/apk/generic/release/*arm64-v8a*.apk app/build/outputs/apk/generic/release/getmed-release.apk
-    
+      run: mv app/build/outputs/apk/generic/debug/*arm64-v8a*.apk app/build/outputs/apk/generic/debug/getmed-debug.apk
+   
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: signed-apks
-        path: app/build/outputs/apk/generic/release/getmed-release.apk
+        path: app/build/outputs/apk/generic/debug/getmed-debug.apk
         if-no-files-found: error
         retention-days: 20
