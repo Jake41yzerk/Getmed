@@ -26,10 +26,8 @@ jobs:
     - run: ./gradlew assembleGenericRelease
 
     - name: Rename APK
-      run: |
-        find app/build/outputs/apk -name "*.apk"
-        mv app/build/outputs/apk/generic/release/*.apk app/build/outputs/apk/generic/release/getmed-release.apk
-
+      run: mv app/build/outputs/apk/generic/release/*arm64-v8a*.apk app/build/outputs/apk/generic/release/getmed-release.apk
+    
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
